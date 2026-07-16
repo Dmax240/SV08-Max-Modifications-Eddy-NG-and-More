@@ -17,13 +17,13 @@ The start sequence must match Eddy-NG behavior. A working probe can still fail w
 
 `RUN_PROBE_VIR_CONTACT` is unsupported with Eddy-NG. Remove it from the cleaning path and use explicit, supervised Z motion instead.
 
-The documented Max cleaning test used values near:
+The proven macro heats to 200 °C for its first cleaning stage, cools to 130 °C,
+and then performs the washer-raised textured-surface pass. These temperatures
+and motion values appear directly in `config/macros.cfg`; the published macro
+does not expose them as casual command-line adjustments.
 
-```text
-CLEAN_NOZZLE CLEAN_TEMP=200 COOL_TEMP=130 BRUSH_Z=0.79 BED_RUB_Z=0.05
-```
-
-Treat these as starting values for this documented Max—not universal settings. A smaller Z value moves the nozzle closer to the brush or bed. Test while watching the machine.
+Treat its geometry as specific to the documented Max. A more negative relative
+Z move goes closer to the cleaning surface. Test while watching the machine.
 
 ## Recovery after a macro edit
 

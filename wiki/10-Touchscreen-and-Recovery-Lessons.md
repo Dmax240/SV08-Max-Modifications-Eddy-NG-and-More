@@ -1,5 +1,9 @@
 # 10. Touchscreen behavior and recovery lessons
 
+> **Advanced and optional:** this touchscreen modification is not required to
+> make Eddy-NG probe or print. Do not attempt it during the beginner conversion.
+> Finish and back up a working printer first.
+
 Special thanks to **Roar Ree (3DPrintDemon)** for extensive Sovol/Klipper
 community work and the [Demon Klipper Essentials Unified
 project](https://github.com/3DPrintDemon/Demon_Klipper_Essentials_Unified).

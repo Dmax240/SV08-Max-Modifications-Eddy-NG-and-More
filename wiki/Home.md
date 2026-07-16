@@ -4,22 +4,48 @@
 >
 > **This is SV08 Max documentation only.** Do not copy plain SV08 geometry, motor values, or travel limits into an SV08 Max configuration—or the other way around.
 
-## Start here
+## New to Klipper? Start here
 
-1. [Compatibility and recovery checklist](01-Baseline-and-Backups.md)
-2. [Toolhead firmware and Katapult layout](02-Toolhead-Firmware.md)
-3. [Eddy NG configuration](03-Eddy-NG-Configuration.md)
-4. [Calibration sequence](04-Calibration.md)
-5. [Cleaning macro and print-start sequence](05-Start-Sequence.md)
-6. [Print-quality tuning](06-Print-Quality.md)
-7. [Troubleshooting](07-Troubleshooting.md)
-8. [TMC Autotune, motors, fans, and buffer](08-TMC-Fans-and-Buffer.md)
-9. [Touchscreen behavior and recovery lessons](10-Touchscreen-and-Recovery-Lessons.md)
-10. [Acknowledgements and source map](11-Acknowledgements-and-Sources.md)
+Follow the **[Beginner walkthrough](00-Beginner-Walkthrough.md)** from top to
+bottom. It explains where each command goes, what the expected result looks
+like, when to stop, and how to roll back. Do not begin with the firmware page
+just because it contains the word "firmware."
+
+If something fails, match the exact message in the
+**[Beginner failure map](09-Beginner-Failure-Map.md)** before changing another
+setting.
+
+## Reference pages
+
+1. [Beginner walkthrough](00-Beginner-Walkthrough.md)
+2. [Compatibility and recovery checklist](01-Baseline-and-Backups.md)
+3. [Toolhead firmware and Katapult layout](02-Toolhead-Firmware.md)
+4. [Eddy NG configuration](03-Eddy-NG-Configuration.md)
+5. [Calibration sequence](04-Calibration.md)
+6. [Cleaning macro and print-start sequence](05-Start-Sequence.md)
+7. [Print-quality tuning](06-Print-Quality.md)
+8. [Technical troubleshooting](07-Troubleshooting.md)
+9. [TMC Autotune, motors, fans, and buffer](08-TMC-Fans-and-Buffer.md)
+10. [Beginner failure map](09-Beginner-Failure-Map.md)
+11. [Touchscreen behavior and recovery lessons](10-Touchscreen-and-Recovery-Lessons.md)
+12. [Acknowledgements and source map](11-Acknowledgements-and-Sources.md)
 
 ## The rule that keeps this project recoverable
 
 Make one change, save a dated backup, restart Klipper, confirm `Ready`, and record the result before making the next change.
+
+## Do not continue unless the checkpoint is green
+
+| Checkpoint | Green result |
+| --- | --- |
+| Before changes | Mainsail shows `Ready` |
+| Configuration backup | A dated complete config directory exists off-printer |
+| Firmware backup | ST-Link file is exactly 131,072 bytes and has a recorded SHA-256 |
+| Firmware build | Application address is `0x08002000` and CAN is 1 Mbps |
+| Configuration | No `YOUR_...` placeholders remain and only one `SAVE_CONFIG` boundary exists |
+| Sensor | `PROBE_EDDY_NG_STATUS` returns real coil values, not `0xffffffff` |
+| Motion | Supervised Z home, QGL, tap, and mesh all complete safely |
+| Finish | A small first-layer patch repeats after cold and warm starts |
 
 ## What this guide records
 

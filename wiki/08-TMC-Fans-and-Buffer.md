@@ -28,15 +28,18 @@ measured resonance response.
 ## Filament buffer
 
 The auxiliary feeder shredded filament on the documented printer and was
-gutted. Removing `push_pin` broke configuration loading. The supported disable
-variable used was:
+gutted. During troubleshooting, removing only `push_pin` broke configuration
+loading. The old buffer implementation could be disabled while retaining its
+required fields with:
 
 ```ini
 variable_is_push_buffer: False
 ```
 
-Keep the required `push_pin` definition. This disables buffer push/jam
-automation while preserving ordinary runout behavior.
+The final cleaned configuration instead removes the entire old buffer include
+and loads [`runout_only.cfg`](https://github.com/Dmax240/SV08-Max-Modifications-Eddy-NG-and-More/blob/main/config/runout_only.cfg).
+That file keeps the PA10 presence switch and omits the feeder motor, push-pin
+jam logic, and feeder LEDs. Choose one approach; never load both.
 
 Do not splice a BTT SFS V2.0 into the buffer's four-wire stepper connector.
 The SFS needs supply, ground, runout signal, and a separate motion/encoder

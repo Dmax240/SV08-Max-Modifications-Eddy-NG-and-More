@@ -20,14 +20,20 @@ an attribution is missing, please open an issue so it can be corrected.
 
 ## Start here
 
-1. Read [Baseline and backups](wiki/01-Baseline-and-Backups.md) before changing
+1. If you are new to Klipper, follow the
+   **[complete beginner walkthrough](wiki/00-Beginner-Walkthrough.md)**. It
+   tells you where to type every command, what success looks like, and when to
+   stop.
+2. Keep the **[beginner failure map](wiki/09-Beginner-Failure-Map.md)** open in
+   another tab.
+3. Read [Baseline and backups](wiki/01-Baseline-and-Backups.md) before changing
    firmware or configuration.
-2. Follow [Toolhead firmware and Katapult](wiki/02-Toolhead-Firmware.md) if the
+4. Follow [Toolhead firmware and Katapult](wiki/02-Toolhead-Firmware.md) if the
    toolhead firmware has not already been prepared.
-3. Install and configure Eddy-NG with
+5. Install and configure Eddy-NG with
    [Eddy-NG configuration](wiki/03-Eddy-NG-Configuration.md).
-4. Complete the full [calibration sequence](wiki/04-Calibration.md).
-5. Install the [clean configuration bundle](config/README.md) only after
+6. Complete the full [calibration sequence](wiki/04-Calibration.md).
+7. Install the [clean configuration bundle](config/README.md) only after
    comparing every pin, UUID placeholder, and hardware option with your own
    printer.
 
@@ -49,6 +55,7 @@ headers, old commented code, and untested slicer profiles.
 ## Guide index
 
 - [Home and scope](wiki/Home.md)
+- [Complete beginner walkthrough](wiki/00-Beginner-Walkthrough.md)
 - [Baseline and backups](wiki/01-Baseline-and-Backups.md)
 - [Toolhead firmware and Katapult](wiki/02-Toolhead-Firmware.md)
 - [Eddy-NG configuration](wiki/03-Eddy-NG-Configuration.md)
@@ -57,6 +64,7 @@ headers, old commented code, and untested slicer profiles.
 - [Print-quality tuning](wiki/06-Print-Quality.md)
 - [Troubleshooting and recovery](wiki/07-Troubleshooting.md)
 - [TMC Autotune, fans, and runout-only buffer MCU](wiki/08-TMC-Fans-and-Buffer.md)
+- [Beginner failure map](wiki/09-Beginner-Failure-Map.md)
 - [Touchscreen communication fix and recovery lessons](wiki/10-Touchscreen-and-Recovery-Lessons.md)
 - [Acknowledgements and source map](wiki/11-Acknowledgements-and-Sources.md)
 

@@ -10,6 +10,10 @@ ideas on an SV08 Max.
 
 The documented SV08 Max toolhead used Katapult with the Klipper application beginning at `0x08002000`.
 
+If the terms on this page are unfamiliar, stop and use the
+[beginner walkthrough](00-Beginner-Walkthrough.md). It includes the full-backup
+size check, where commands are entered, and green checkpoints.
+
 ## Build settings
 
 The important settings were:
@@ -45,6 +49,19 @@ make
 ls -lh ~/klipper/out/klipper.bin
 sha256sum ~/klipper/out/klipper.bin
 ```
+
+Expected result: `klipper.bin` exists and has a nonzero size. Record its exact
+size and SHA-256. The build log alone is not verification.
+
+## ST-Link application programming boundary
+
+When using ST-Link to preserve the existing 8 KiB Katapult bootloader, program
+the verified Klipper binary at `0x08002000`. Do not perform a full-chip erase
+and do not start the application binary at `0x08000000`. The complete original
+128 KiB backup must already exist before this operation.
+
+After programming, disconnect ST-Link, restore normal printer wiring,
+power-cycle, and confirm the toolhead MCU returns before attempting Z motion.
 
 ## Safe sequence
 

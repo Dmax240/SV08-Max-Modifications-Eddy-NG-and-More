@@ -16,10 +16,32 @@ Use this as a checklist alongside the current SV08 Max configuration. It is not 
 | Y offset | `-0.75` mm |
 | `home_trigger_height` | `2.0` mm |
 | `tap_target_z` | `-0.40` mm |
-| Samples | 3 tap samples, 5 maximum samples |
+| Samples | 4 tap samples, 10 maximum samples |
 | Standard deviation | `0.025` |
 | Tap mode | `butter` |
 | Threshold | `250` |
+
+## Installation commands
+
+In the printer's SSH terminal, use the current upstream installation flow:
+
+```bash
+cd ~
+git clone https://github.com/vvuk/eddy-ng
+cd ~/eddy-ng
+./install.sh
+```
+
+For an existing clone:
+
+```bash
+cd ~/eddy-ng
+git pull
+./install.sh
+```
+
+After a future Klipper update, reinstall Eddy-NG because it patches/links files
+into the Klipper tree. Do not assume it survives a host update unchanged.
 
 ## Edit order
 

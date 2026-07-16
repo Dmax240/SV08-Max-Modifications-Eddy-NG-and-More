@@ -14,6 +14,9 @@ made a recoverable SV08 Max Eddy-NG conversion possible.
   model.
 - Credit boundary: Eddy-NG owns the software concepts and commands; this guide
   contributes one SV08 Max installation history and measured values.
+- Beginner-flow verification: the July 16, 2026 revision was checked against
+  Eddy-NG source commit `1ed056b` and Wiki commit `ade8664`, including automatic
+  `PROBE_EDDY_NG_SETUP` and post-calibration tests before `SAVE_CONFIG`.
 
 ### Roar Ree (3DPrintDemon)
 

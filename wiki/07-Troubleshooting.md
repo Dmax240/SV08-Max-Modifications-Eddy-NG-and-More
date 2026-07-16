@@ -20,13 +20,14 @@ There must be exactly one result. Normal config, macros, motor constants, and TM
 
 ## Buffer feeder jam
 
-Do not delete the required `push_pin` option. The supported disable method recorded for this Max is:
+Choose exactly one approach:
 
-```ini
-variable_is_push_buffer: False
-```
+1. Keep the original buffer section and use its supported disable variable,
+   retaining the required `push_pin`; or
+2. Remove that entire buffer include and use the supplied `runout_only.cfg`.
 
-This disables buffer push/jam automation while leaving the normal runout sensor active.
+Do not load both implementations. The final documented machine uses the second
+approach because the feeder was gutted.
 
 ## Fan still audible at room temperature
 
@@ -40,16 +41,18 @@ The bed-fan threshold can control Klipper’s cooldown behavior. A fan that cont
 
 ## “Drive current 15 not calibrated”
 
-Do not start a print. Home X/Y and rerun the Eddy-NG drive-current calibration.
-Complete the manual helper, run `SAVE_CONFIG`, allow the restart, then query
-calibration status. Repeated stale touchscreen `ABORT` messages do not prove
-the saved calibration was erased.
+Do not start a print. Home X/Y and run the current upstream automatic
+`PROBE_EDDY_NG_SETUP` flow first. If manual calibration is required, complete
+the helper, test `PROBE_EDDY_NG_PROBE_STATIC`, perform a supervised Z home, and
+verify the reading near Z=2 mm before `SAVE_CONFIG`. Repeated stale touchscreen
+`ABORT` messages do not prove calibration was erased.
 
 ## `Option 'push_pin' ... must be specified`
 
-The buffer section requires `push_pin`; deleting it is not a supported disable
-method. Restore the option and use the buffer feature's supported global
-disable variable described in [page 8](08-TMC-Fans-and-Buffer.md).
+The old buffer section requires `push_pin`; deleting only that option is not a
+supported disable method. Either restore the complete old section and use its
+global disable variable, or remove the complete include and use
+`runout_only.cfg`. Never leave a partial section or load both.
 
 ## Motors make a slight high-pitched sound at rest
 
