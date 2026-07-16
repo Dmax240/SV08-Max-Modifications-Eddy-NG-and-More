@@ -2,6 +2,8 @@
 
 ## Community documentation
 
+I spent the past few days exhausting all my AI credits and totally changing the printer into something custom and perfect. here is everything i did documented. some of it is useless, some useful, but its worth sharing so others dont duplicate work. Yes, in the process I unneccessarilly wasted time figuring out things others have already figured out. This is hugely possibly because of all of you, and developers such as Roar Ree and others. i tried to give credit everytime everywhere but my apologies if i missed any citations. this is AI but its working perfect with no errors afters like 100 hrs of prints.
+
 The step-by-step, GitHub/Wiki-ready guide is here:
 
 - [SV08 Max Eddy NG guide home](wiki/Home.md)
