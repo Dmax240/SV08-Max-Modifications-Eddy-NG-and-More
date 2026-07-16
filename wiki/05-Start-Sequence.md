@@ -60,4 +60,4 @@ documented SV08 Max. Washer thickness and mounting tolerances can change the
 required motion on another machine. Do not change global Z offset, Eddy
 `tap_adjust_z`, or probe calibration to compensate for cleaning geometry.
 
-See [`examples/cleaning-height-tested-change.cfg`](../examples/cleaning-height-tested-change.cfg).
+See the tested implementation in [`config/macros.cfg`](https://github.com/Dmax240/SV08-Max-Modifications-Eddy-NG-and-More/blob/main/config/macros.cfg).

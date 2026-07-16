@@ -39,7 +39,7 @@ An older `tap_adjust_z = 0.170` value was superseded. The live Max calibration l
 
 ## Annotated outline
 
-See [`examples/eddy-ng-reference.cfg`](../examples/eddy-ng-reference.cfg).
+See the cleaned [`config/eddy_ng.cfg`](https://github.com/Dmax240/SV08-Max-Modifications-Eddy-NG-and-More/blob/main/config/eddy_ng.cfg).
 Section and option names can change with Eddy-NG versions, so compare the
 example with the exact revision you installed. Do not paste it unchanged.
 

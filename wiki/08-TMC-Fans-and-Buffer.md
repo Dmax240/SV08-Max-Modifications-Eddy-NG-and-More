@@ -19,7 +19,7 @@ Do not substitute the standard SV08 Z-motor entry. The official Max config
 uses 1.2 A on all four Z drivers; lowering them to 0.8 A caused poor behavior
 on the documented machine.
 
-See [`examples/tmc-autotune-reference.cfg`](../examples/tmc-autotune-reference.cfg).
+See the cleaned [`config/tmc_autotune.cfg`](https://github.com/Dmax240/SV08-Max-Modifications-Eddy-NG-and-More/blob/main/config/tmc_autotune.cfg).
 
 After installation, restart Klipper, confirm `Ready`, inspect the log for TMC
 errors, and rerun input shaper because changed driver waveforms can alter the

@@ -14,8 +14,8 @@
 6. [Print-quality tuning](06-Print-Quality.md)
 7. [Troubleshooting](07-Troubleshooting.md)
 8. [TMC Autotune, motors, fans, and buffer](08-TMC-Fans-and-Buffer.md)
-10. [Touchscreen behavior and recovery lessons](10-Touchscreen-and-Recovery-Lessons.md)
-11. [Acknowledgements and source map](11-Acknowledgements-and-Sources.md)
+9. [Touchscreen behavior and recovery lessons](10-Touchscreen-and-Recovery-Lessons.md)
+10. [Acknowledgements and source map](11-Acknowledgements-and-Sources.md)
 
 ## The rule that keeps this project recoverable
 
@@ -40,6 +40,7 @@ must come from your own printer.
 
 ## Primary references
 
+- [Eddy-NG by vvuk and contributors](https://github.com/vvuk/eddy-ng)
 - [BIGTREETECH Eddy documentation](https://github.com/bigtreetech/Eddy)
 - [Sovol SV08 Max repository](https://github.com/Sovol3d/SV08MAX)
 - [Klipper configuration checks](https://www.klipper3d.org/Config_checks.html)
