@@ -1,5 +1,9 @@
 # 3. Eddy NG configuration
 
+Eddy-NG is the work of [Vladimir Vukicevic (`vvuk`) and project
+contributors](https://github.com/vvuk/eddy-ng). Use its current wiki and
+configuration reference as the authority for version-specific option names.
+
 Use this as a checklist alongside the current SV08 Max configuration. It is not a drop-in replacement for every Max revision.
 
 ## Recorded Max values
@@ -32,3 +36,29 @@ Use this as a checklist alongside the current SV08 Max configuration. It is not 
 ## Important historical value
 
 An older `tap_adjust_z = 0.170` value was superseded. The live Max calibration later reported `tap_adjust_z: 0.0`. Read the live value before restoring anything from an old note.
+
+## Annotated outline
+
+See [`examples/eddy-ng-reference.cfg`](../examples/eddy-ng-reference.cfg).
+Section and option names can change with Eddy-NG versions, so compare the
+example with the exact revision you installed. Do not paste it unchanged.
+
+## `SAVE_CONFIG` boundary: the easiest way to break everything
+
+Klipper owns everything after:
+
+```text
+#*# <---------------------- SAVE_CONFIG ---------------------->
+```
+
+All manual sections, includes, macros, TMC Autotune entries, and motor
+constants must remain above that line. Check before and after every automated
+save:
+
+```bash
+grep -n SAVE_CONFIG ~/printer_data/config/printer.cfg
+```
+
+There must be exactly one generated header. A duplicated header or manual
+sections placed inside generated data can cause apparently unrelated probe,
+PID, or motor errors after `SAVE_CONFIG`.

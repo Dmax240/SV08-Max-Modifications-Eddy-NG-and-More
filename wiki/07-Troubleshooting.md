@@ -37,3 +37,22 @@ The bed-fan threshold can control Klipper’s cooldown behavior. A fan that cont
 - [Reddit: SV08 upgrades and Eddy discussion](https://www.reddit.com/r/Sovol/comments/1ffpupx)
 - [Reddit: recent SV08/Eddy-kit discussion](https://www.reddit.com/r/SovolSV08/comments/1tvowr5)
 - [Rappetor mainline reference](https://github.com/Rappetor/Sovol-SV08-Mainline) — reference only; validate against SV08 Max hardware.
+
+## “Drive current 15 not calibrated”
+
+Do not start a print. Home X/Y and rerun the Eddy-NG drive-current calibration.
+Complete the manual helper, run `SAVE_CONFIG`, allow the restart, then query
+calibration status. Repeated stale touchscreen `ABORT` messages do not prove
+the saved calibration was erased.
+
+## `Option 'push_pin' ... must be specified`
+
+The buffer section requires `push_pin`; deleting it is not a supported disable
+method. Restore the option and use the buffer feature's supported global
+disable variable described in [page 8](08-TMC-Fans-and-Buffer.md).
+
+## Motors make a slight high-pitched sound at rest
+
+A quiet switching tone can occur with TMC drivers. Stop if there is grinding,
+violent vibration, unexpected motion, overheating, or a new loud tone. Verify
+the active run currents and motor definitions before changing registers.

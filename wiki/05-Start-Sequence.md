@@ -32,3 +32,32 @@ Treat these as starting values for this documented Max—not universal settings.
 3. Run the macro with the toolhead supervised.
 4. Test a small first-layer patch.
 5. Record the exact values and result.
+
+## Tested second-stage cleaning correction
+
+The second pass originally moved above the textured cleaning surface. The
+tested correction combined a mechanical and macro change:
+
+1. Raise the cleaning surface using four identical washers, one at each
+   mounting point, so it remains level and supported.
+2. Confirm the washer stack does not interfere with bed travel, wiring, or the
+   nozzle path.
+3. Back up the active macro.
+4. In the active relative-motion cleaning stage, change the descent to:
+
+   ```gcode
+   G1 Z-5.325
+   ```
+
+5. Confirm this stage is actually in `G91` relative mode before using a
+   negative Z move. The same line is dangerous in the wrong coordinate state.
+6. Run the complete cleaning routine under supervision.
+7. Confirm visible contact without nozzle/plate deflection, then verify a small
+   first layer.
+
+This exact washer-plus-`Z-5.325` combination was tested successfully on the
+documented SV08 Max. Washer thickness and mounting tolerances can change the
+required motion on another machine. Do not change global Z offset, Eddy
+`tap_adjust_z`, or probe calibration to compensate for cleaning geometry.
+
+See [`examples/cleaning-height-tested-change.cfg`](../examples/cleaning-height-tested-change.cfg).
